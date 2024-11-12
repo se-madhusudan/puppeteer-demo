@@ -1,0 +1,28 @@
+{
+  "name": "puppeteer-demo",
+  "version": "1.0.0",
+  "description": "practicing screenshot and pdf with puppeteer",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "screenshot",
+    "pdf"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "image-size": "^1.1.1",
+    "mime": "^4.0.4",
+    "pdfkit": "^0.15.1",
+    "puppeteer": "^23.7.1",
+    "sharp": "^0.33.5"
+  }
+}
