@@ -9,7 +9,7 @@ import sizeOf from 'image-size';
   const page = await browser.newPage();
 
   // Set screen size - it's not required in case, full page screen shot is being taken i.e. fullPage : true is set. also to get full page screenshot width specific width, set width to that value, and use any random value for height,
-  await page.setViewport({ width: 415, height: 2000, deviceScaleFactor: 1 });
+  await page.setViewport({ width: 415, height: 2000, deviceScaleFactor: 2 });
 
   // Navigate the page to a URL
   await page.goto('https://developer.chrome.com/', {
@@ -22,6 +22,13 @@ import sizeOf from 'image-size';
     path: screenshotPath,
     fullPage: true, // for capturing full page, remove this line if full page not required
   });
+
+  // Evaluate a script in the page context
+  const title = await page.evaluate(() => {
+    return document.title;
+  });
+
+  console.log('Page title:', title);
 
   // Close the browser
   await browser.close();
